@@ -1,12 +1,12 @@
 import express from "express";
-import cors from "cors";
 
 const app = express();
-app.use(cors());
 const port = 8000;
 
+app.get("/", (req, res) => {
+  res.send("Hello Minaya");
+});
 
-app.use("/", (req, res) => res.send("welcome"));
-
-
-app.listen(port, () => {});
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
+});
